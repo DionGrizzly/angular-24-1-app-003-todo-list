@@ -1,0 +1,13 @@
+<select [(ngModel)]="filter">
+    <option value="all">Всі</option>
+    <option value="completed">Виконані</option>
+    <option value="inCompleted">Не виконані</option>
+</select>
+<ul>
+    <li *ngFor="let i of getFilteredTodo()">
+        <p>{{ i.title }}</p>
+        <p>complited: {{ i.completed }}</p>
+        <input type="checkbox" [checked]="i.completed" (change)="onActiveTodo(i.id)">
+        <button (click)="onDeleteTodo(i.id)">-</button>
+    </li>
+</ul>

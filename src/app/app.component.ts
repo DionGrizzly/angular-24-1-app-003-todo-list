@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app-02';
+  public title: string = 'Hello';
+
+  public onChangeTitle(): void{
+    this.title = 'New title';
+  }
 }
